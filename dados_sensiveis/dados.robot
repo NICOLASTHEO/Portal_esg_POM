@@ -1,3 +1,3 @@
 *** Variables ***
-${meu_email}         theo.araujo@innotech.pt
-${minha_senha}       Theoaraujo0123!
+${meu_email}         theo.araujo@testes.pt
+${minha_senha}      Testes0123456!
