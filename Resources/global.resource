@@ -10,5 +10,5 @@ End Browser
     Close Browser
 
 *** Variables ***
-${url_portal}        https://portal.cer.itb-sibsesg.com
+${url_portal}        https://portal.xxxxxxxxxxxx.com
 ${browser}           chrome  
