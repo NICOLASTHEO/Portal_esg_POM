@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.1 on win32)" generated="20240424 12:46:57.697" rpa="false" schemaversion="4">
+<suite id="s1" name="Realiza Login Test" source="C:\Users\User\OneDrive\Desktop\teste_portal\Test\realiza_login_test.robot">
+<test id="s1-t1" name="CT01 - Realiza login com sucesso" line="12">
+<kw name="Start Browser" library="global" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url_portal}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240424 12:46:58.112" level="INFO">Opening browser 'chrome' to base url 'https://portal.cer.itb-sibsesg.com'.</msg>
+<status status="PASS" starttime="20240424 12:46:58.111" endtime="20240424 12:47:04.046"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240424 12:47:04.047" endtime="20240424 12:47:04.181"/>
+</kw>
+<status status="PASS" starttime="20240424 12:46:58.111" endtime="20240424 12:47:04.182"/>
+</kw>
+<kw name="Dado que acesso o Portal de empresas ESG" library="key_login">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${title_login}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20240424 12:47:04.250" level="INFO">Page title is 'esg-cer'.</msg>
+<status status="PASS" starttime="20240424 12:47:04.210" endtime="20240424 12:47:04.250"/>
+</kw>
+<status status="PASS" starttime="20240424 12:47:04.210" endtime="20240424 12:47:04.250"/>
+</kw>
+<kw name="Quando Realizo login" library="key_login">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_email}</arg>
+<arg>${meu_email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240424 12:47:04.253" level="INFO">Typing text 'theo.araujo@innotech.pt' into text field 'username'.</msg>
+<status status="PASS" starttime="20240424 12:47:04.253" endtime="20240424 12:47:04.509"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${input_pw}</arg>
+<arg>${minha_senha}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20240424 12:47:04.511" level="INFO">Typing password into text field 'password'.</msg>
+<msg timestamp="20240424 12:47:04.589" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240424 12:47:04.721" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240424 12:47:04.509" endtime="20240424 12:47:04.721"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_login}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240424 12:47:04.722" level="INFO">Clicking element '//button[contains(.,'Log in')]'.</msg>
+<status status="PASS" starttime="20240424 12:47:04.721" endtime="20240424 12:47:09.180"/>
+</kw>
+<status status="PASS" starttime="20240424 12:47:04.250" endtime="20240424 12:47:09.180"/>
+</kw>
+<kw name="Então devo ser redirecionado a minha tela de Home" library="key_home">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${msg_boas_vindas}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240424 12:47:09.183" endtime="20240424 12:47:09.316"/>
+</kw>
+<status status="PASS" starttime="20240424 12:47:09.183" endtime="20240424 12:47:09.316"/>
+</kw>
+<kw name="E vejo a msg de &quot;Bem Vindo&quot;" library="key_home" sourcename="E vejo a msg de &quot;${msg}&quot;">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${msg}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240424 12:47:09.378" level="INFO">Current page contains text 'Bem Vindo'.</msg>
+<status status="PASS" starttime="20240424 12:47:09.318" endtime="20240424 12:47:09.378"/>
+</kw>
+<status status="PASS" starttime="20240424 12:47:09.318" endtime="20240424 12:47:09.378"/>
+</kw>
+<kw name="End Browser" library="global" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240424 12:47:09.928" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240424 12:47:09.378" endtime="20240424 12:47:09.928"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240424 12:47:09.930" endtime="20240424 12:47:12.403"/>
+</kw>
+<status status="PASS" starttime="20240424 12:47:09.378" endtime="20240424 12:47:12.403"/>
+</kw>
+<tag>login</tag>
+<tag>login_sucesso</tag>
+<status status="PASS" starttime="20240424 12:46:58.108" endtime="20240424 12:47:12.403"/>
+</test>
+<doc>para rodar os testes digite isso: rm -rf Results/* &amp;&amp; robot -d Results realiza_login_test.robot</doc>
+<status status="PASS" starttime="20240424 12:46:57.703" endtime="20240424 12:47:12.407"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">login</stat>
+<stat pass="1" fail="0" skip="0">login_sucesso</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Realiza Login Test">Realiza Login Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
